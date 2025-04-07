@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .product-details {
+            text-align: center;
+        }
+
+        .product h2 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .product p {
+            margin-top: 5px;
+        }
+
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #45a049;
+        }
+		/* Ensure all products have the same height and width */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensure equal height */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px; /* Fixed width */
+    display: flex;
+    flex-direction: column; /* Ensure buttons align at the bottom */
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-details {
+    text-align: center;
+    flex-grow: 1; /* Ensure details take remaining space */
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.product p {
+    margin-top: 5px;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: auto; /* Align button to the bottom */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}
+/* Ensure all products have the same height and width */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensure equal height */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px; /* Fixed width */
+    display: flex;
+    flex-direction: column; /* Ensure buttons align at the bottom */
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-details {
+    text-align: center;
+    flex-grow: 1; /* Ensure details take remaining space */
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.product p {
+    margin-top: 5px;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Ensure block display for full width */
+    width: 100%; /* Button takes full width */
+    margin-top: auto; /* Align button to the bottom */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}
+.out-of-stock {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Product Store</h1>
+    </header>
+    <main>
+        <div class="product">
+            <img src="images/1f30a4ae-eca0-4a19-ab72-4f21a279cdaa.jpg" alt="Product Image">
+            <div class="product-details">
+                <h2>Cool theme</h2>
+                <p>Description of the product.</p>
+                <p>Price: $19.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        
+        <div class="product">
+            <img src="images/ed4a8f96-7864-4bdf-b475-ea1a37cfe0cb.jpg" alt="Product Image">
+            <div class="product-details">
+                <h2>soft theme</h2>
+                <p>Description of Product.</p>
+                <p>Price: $24.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/eeb7e970-232e-43c5-b247-f1322e998355.jpg" alt="Product Image">
+            <div class="product-details">
+                <h2>Super Hero theme</h2>
+                <p>Description of Product.</p>
+                <p>Price: $29.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/B49FB7BD-D6B7-4DCD-B1B9-7694B3B7E9B5 (1).jpg" alt="Product Image">
+            <div class="product-details">
+                <h2>Vintage theme</h2>
+                <p>Description of Product.</p>
+                <p>Price: $14.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </main>
+	 <div class="out-of-stock">
+        <p>Other products are currently out of stock. Please try again later.</p>
+    </div>
+</body>
+</html>
