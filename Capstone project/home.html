@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Services & Care</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8d7da;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* New Header styles */
+    header {
+      background-color: #fff;
+      color: #333;
+      padding: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #ff9a3c;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding: 0 20px;
+    }
+
+    header .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ff6b6b;
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo:before {
+      content: "🐾";
+      margin-right: 10px;
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-right: 25px;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      display: block;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      color: #ff6b6b;
+      background-color: #f8f9fa;
+      transform: translateY(-2px);
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 0 0 8px 8px;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      border-top: 3px solid #ff9a3c;
+    }
+
+    .dropdown-menu a {
+      color: #555;
+      padding: 12px 16px;
+      display: block;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #ff6b6b;
+      color: white;
+      padding-left: 20px;
+    }
+
+    nav ul li:hover .dropdown-menu {
+      display: block;
+    }
+
+    .login-signup {
+      margin-left: 30px;
+    }
+
+    .login-signup a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      background: linear-gradient(45deg, #ff6b6b, #ff9a3c);
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255,107,107,0.2);
+    }
+
+    .login-signup a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(255,107,107,0.3);
+      background: linear-gradient(45deg, #ff9a3c, #ff6b6b);
+    }
+
+    /* Hamburger Menu */
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+      padding: 5px;
+      color: #ff6b6b;
+    }
+
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: row;
+        align-items: center;
+        height: 70px;
+        padding: 0 15px;
+      }
+
+      .menu-icon {
+        display: block;
+        margin-left: auto;
+        margin-right: 10px;
+      }
+
+      nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        display: none;
+      }
+
+      #menu-toggle:checked + .menu-icon + nav {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      nav ul li a {
+        padding: 15px 20px;
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        border-top: none;
+        width: 100%;
+      }
+
+      .login-signup {
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+        padding: 0 20px;
+      }
+
+      .login-signup a {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    /* Rest of your existing styles remain unchanged */
+    #hero {
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 300px 0;
+      color: #ffffff;
+      background-image: url('images/1_-_Dog_Toys_Banner_Desktop_1920x_fd7c2ddc-4498-4659-98da-22381a39b20b_1920x_cleanup.jpg');
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #343a40;
+    }
+
+    .service-item,
+    .product-item {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item img,
+    .product-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item h3,
+    .product-item h3 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+      color: #343a40;
+    }
+
+    .service-item p,
+    .product-item p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555b61;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form input,
+    form textarea,
+    form button {
+      display: block;
+      width: calc(100% - 20px);
+      margin-bottom: 15px;
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #343a40;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #ffcc00;
+    }
+
+    #footer {
+      background-color: #343a40;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <h1 class="logo">Pet Services & Care</h1>
+
+    <!-- Hamburger toggle -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="Dogservices.html">Dog Services</a></li>
+            <li><a href="catandotherservise.html">Cat and Other Services</a></li>
+          </ul>
+        </li>
+        <li><a href="#products">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="pettoys.html">Pet Toys</a></li>
+            <li><a href="outof.html">Customized Tags</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="login-signup">
+        <a href="login.html">Login / Sign Up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Rest of your HTML remains exactly the same -->
+<section id="hero">
+  <div class="hero-container">
+    <h2>Welcome to Your Pet's Paradise</h2>
+    <p>Explore our wide range of pet services and quality pet products.</p>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="service-item">
+      <img src="images/images.jpg" alt="Service 1">
+      <h3>Dog Services</h3>
+      <p>Grooming Services, Veterinary Care, Training and Behavioral Services, Nutritional Guidance.</p>
+    </div>
+    <div class="service-item">
+      <img src="images/download (3).jpg" alt="Service 2">
+      <h3>Cat Services</h3>
+      <p>Specialized Services, Nutritional Guidance.</p>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="container">
+    <h2>Our Products</h2>
+    <div class="product-item">
+      <img src="images/image (4).jpg" alt="Product 1">
+      <h3>Pet Toys</h3>
+      <p>Interactive Toys, Chew Toys, Plush Toys, and more.</p>
+    </div>
+  </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Previous head and header sections remain exactly the same] -->
+
+<body>
+
+<!-- [Header section remains exactly the same] -->
+
+<!-- [Hero section remains exactly the same] -->
+
+<!-- [Services section remains exactly the same] -->
+
+<!-- [Products section remains exactly the same] -->
+
+<!-- New About Us Section -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Us</h2>
+    <div class="about-content" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h3 style="color: #ff6b6b; text-align: center;">Our Story</h3>
+        <p style="line-height: 1.6;">Founded in 2015, Pet Services & Care began as a small pet grooming salon with a big heart. What started as a passion project has grown into a full-service pet care center dedicated to providing the highest quality services and products for your furry family members.</p>
+      </div>
+      <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h3 style="color: #ff6b6b; text-align: center;">Our Mission</h3>
+        <p style="line-height: 1.6;">We believe pets deserve the same level of care and attention as any other family member. Our mission is to enhance the lives of pets and their owners through exceptional services, premium products, and expert advice in a welcoming, loving environment.</p>
+      </div>
+      <div style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h3 style="color: #ff6b6b; text-align: center;">Our Team</h3>
+        <p style="line-height: 1.6;">Our certified pet care specialists bring years of experience and genuine love for animals to every interaction. From groomers to trainers, each team member undergoes rigorous training to ensure your pet receives the best possible care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- New Contact Us Section -->
+<section id="contact" class="section" style="background-color: #f8f9fa;">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      <div style="flex: 1; min-width: 300px;">
+        <h3 style="color: #ff6b6b;">Get in Touch</h3>
+        <p style="line-height: 1.6; margin-bottom: 20px;">Have questions or want to schedule an appointment? We'd love to hear from you!</p>
+        
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: #555; margin-bottom: 10px;">📍 Our Location</h4>
+          <p>123 Pet Care Avenue<br>Animal City, AC 12345</p>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: #555; margin-bottom: 10px;">📞 Contact Info</h4>
+          <p>Phone: (123) 456-7890<br>Email: info@petservicescare.com</p>
+        </div>
+        
+        <div>
+          <h4 style="color: #555; margin-bottom: 10px;">⏰ Business Hours</h4>
+          <p>Monday-Friday: 9am-7pm<br>Saturday: 10am-5pm<br>Sunday: 12pm-4pm</p>
+        </div>
+      </div>
+      
+      <div style="flex: 1; min-width: 300px;">
+        <h3 style="color: #ff6b6b;">Send Us a Message</h3>
+        <form>
+          <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+          <input type="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+          <input type="text" placeholder="Subject" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+          <textarea placeholder="Your Message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+          <button type="submit" style="background: linear-gradient(45deg, #ff6b6b, #ff9a3c); color: white; border: none; padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- [Footer section remains exactly the same] -->
+
+</body>
+</html>
+
+<footer id="footer">
+  <p>&copy; 2024 Pet Services & Care. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
